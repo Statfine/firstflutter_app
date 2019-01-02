@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firstflutter_app/container/BottomNavigation/HomePage.dart';
 import 'package:firstflutter_app/container/BottomNavigation/FindPage.dart';
 import 'package:firstflutter_app/container/BottomNavigation/MinePage.dart';
+import 'package:firstflutter_app/container/BasicPage.dart';
 
 // 底部tab切换页面
 class MainPage extends StatelessWidget {
@@ -115,7 +116,38 @@ class MainPageState extends State<MainPageWidget> {
             _tabIndex = index;
           });
         },
-      )
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            //userHeader, // 可在这里替换自定义的header
+            ListTile(
+              title: Text('BasicPage 1'),
+              leading: new CircleAvatar(child: new Icon(Icons.school),),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => (BasicPage())));
+              },
+            ),
+            ListTile(title: Text('BasicPage 2'),
+              leading: new CircleAvatar(child: new Text('B2'),),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => (BasicPage())));
+              },
+            ),
+            ListTile(title: Text('BasicPage 3'),
+              leading: new CircleAvatar(
+                child: new Icon(Icons.list),),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => (BasicPage())));
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
