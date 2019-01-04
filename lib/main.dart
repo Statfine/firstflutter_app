@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firstflutter_app/container/BasicPage.dart';
 import 'package:firstflutter_app/container/BottomNavigation/MainPage.dart';
+import 'package:firstflutter_app/container/LoginPage/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -127,6 +128,22 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: new Text(
                 "底部栏页面",
+                style: new TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Color(0xFF4885ed),
+            ),
+            new MaterialButton(
+              onPressed: () {
+                print('Jump page');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => (LoginPageWidget())));
+              },
+              child: new Text(
+                "Login",
                 style: new TextStyle(
                   color: Colors.white,
                 ),
