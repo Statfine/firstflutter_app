@@ -133,7 +133,7 @@ class MainPageState extends State<MainPageWidget> {
             ListTile(title: Text('BasicPage 2'),
               leading: new CircleAvatar(child: new Text('B2'),),
               onTap: () {
-                Navigator.pop(context);
+//                Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => (BasicPage())));
               },
             ),
